@@ -35,3 +35,11 @@ jobs:
 
       - name: Node.js version
         run: node --version
+
+      - name: PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+
+      - name: PHP version
+        run: php --version
