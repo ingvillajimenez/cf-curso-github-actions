@@ -7,5 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ls
-        run: ls -al
+      - name: Write and read a file
+        run: |
+          echo "Hola Mundo" >> hola.txt
+          cat hola.txt
