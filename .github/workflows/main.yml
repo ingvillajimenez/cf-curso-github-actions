@@ -8,4 +8,4 @@ jobs:
 
     steps:
       - name: ls
-        run: ls -la
+        run: ls -al
