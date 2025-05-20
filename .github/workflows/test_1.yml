@@ -1,4 +1,4 @@
-name: Example of a workflow with a variable
+name: Example of a workflow with repository variable
 
 on: [push]
 
@@ -10,7 +10,5 @@ jobs:
       JOB_MY_VAR: Variable a nivel de job
 
     steps:
-      - name: Print environment variable
-        env:
-          STEP_MY_VAR: Variable a nivel de step
-        run: echo "El valor es $STEP_MY_VAR"
+      - name: Use vars context
+        run: echo "El valor es ${{ vars.MY_VARIABLE }}"
