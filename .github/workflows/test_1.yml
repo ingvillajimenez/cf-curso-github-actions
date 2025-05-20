@@ -12,3 +12,6 @@ jobs:
     steps:
       - name: Use vars context
         run: echo "El valor es ${{ vars.MY_VARIABLE }}"
+
+      - name: Use env context
+        run: echo "El valor es ${{ env.JOB_MY_VAR }}"
