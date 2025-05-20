@@ -1,0 +1,17 @@
+name: Test SSH key as GitHub Actions secret
+
+on: [push]
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verify SSH key as a secret
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY_AS_SECRET }}" >> ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H 127.0.1.1 >> ~/.ssh/known_hosts
+          cat ~/.ssh/known_hosts
+          ls -al ~/.ssh
