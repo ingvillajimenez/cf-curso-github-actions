@@ -1,24 +1,17 @@
-name: Example of a workflow with a service
+name: Example of a workflow with a variable
 
 on: [push]
 
 jobs:
-  service-job:
+  test-job:
     runs-on: ubuntu-latest
 
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: example
-        ports:
-          - 3306:3306
-
-      redis:
-        image: redis
-        ports:
-          - 6379:6379
+    env:
+      MY_VAR: "Mi variable de entorno"
 
     steps:
       - name: List files
-        run: ls -al
+        run: ls -la
+
+      - name: Print environment variable
+        run: echo "Value is $MY_VAR"
