@@ -7,11 +7,10 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      MY_VAR: "Mi variable de entorno"
+      JOB_MY_VAR: Variable a nivel de job
 
     steps:
-      - name: List files
-        run: ls -la
-
       - name: Print environment variable
-        run: echo "Value is $MY_VAR"
+        env:
+          STEP_MY_VAR: Variable a nivel de step
+        run: echo "El valor es $STEP_MY_VAR"
