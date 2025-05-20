@@ -11,6 +11,6 @@ runs:
   using: "composite"
 
   steps:
-    - name: Hola Mundo
+    - name: Print message
       run: echo "${{ inputs.message }}"
       shell: bash
